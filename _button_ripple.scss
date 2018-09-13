@@ -1,0 +1,168 @@
+$height-common: 32px;
+$common-dimension: 20px;
+$font-stack: Roboto, sans-serif;
+$font-size: 14px;
+$lower-dropdown-width: 18%; 
+$margin-none: 0;
+$value-none: none;
+$primary-color: blue;
+$container-width: 949px;
+$line-width: 13.2%;
+$number-block-dimen: 20px;
+$color-black: rgba(0, 0, 0, 0.87);
+$light-color: #E0E0E0;
+
+@mixin position_top_right_bottom_left($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left; 
+}
+
+@mixin margin($top: initial, $right: initial, $bottom: initial, $left: initial) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin transition($tansition-value) {
+  -webkit-transition: $tansition-value;
+  -moz-transition: $tansition-value;
+  transition: $tansition-value;
+}
+
+@mixin border-radius($radius: $value-none) {
+  -webkit-border-radius: $radius;
+  -moz--border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($x: null, $y: null, $opaque: 0, $blur: 0, $bgColor: none) {
+  -webkit-box-shadow: $x $y $opaque $blur $bgColor;
+  -moz-box-shadow: $x $y $opaque $blur $bgColor;
+  box-shadow: $x $y $opaque $blur $bgColor;
+}
+
+@mixin padding($top: initial, $right: initial, $bottom: initial, $left: initial) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin animation($animation-value: none) {
+  -webkit-animation: $animation-value;
+  -moz-animation: $animation-value;
+  animation: $animation-value;
+}
+
+@mixin transform-style($style-transform: none) {
+  -webkit-transform: $style-transform;
+  -moz-transform: $style-transform;
+  transform: $style-transform;
+}
+
+@mixin bottom-border($border-width: 0, $border-style: none, $border-color: transparent) {
+  border-bottom: $border-width $border-style $border-color;
+}
+
+.common_width_margin {
+  width: $lower-dropdown-width;
+  @include margin(0, auto,0, auto);
+}
+
+.button_group {
+  button {
+    &:nth-child(2) {
+      height: $height-common;
+      &:active {
+        box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.2);
+        @include transform-style('translateZ(4px)');  
+      }    
+    }
+    &:nth-child(1) {
+      height: $height-common;  
+    } 
+  }   
+}   
+ 
+@keyframes ripple {
+  to {
+    opacity: 0.2;
+    @include transform-style(scale(2.5));
+  }
+}
+
+.ripple {
+  display: block;
+  background: rgba(255, 255, 255, .9);
+  @include position_top_right_bottom_left(relative, 0, 0, 0, 0);
+  @include animation(ripple 0.4s linear);
+  @include padding(9px, 0, 0, 0);
+  @include transform-style(scale(0));
+}
+
+@keyframes rippleCircle {
+  to {
+    opacity: 0.6;
+    height: 10px;
+    width: 10px;
+    @include border-radius(50%);
+    @include transform-style(scale(2.5));
+  }
+}
+
+button.enable_ripple_dropdown {
+  height: 20px;
+  width: 1px;
+  border: none;
+  outline: none;
+  position: relative;
+  background: #fff;
+  cursor: pointer;
+  @include padding(0, 10px, 0, 2px);
+}
+
+button.enable_ripple_dropdown:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #848588;
+  opacity: .6;
+  @include margin(0, 8px, 18px, 0);
+  @include position_top_right_bottom_left(relative, -17px, 0, 0, -7px);
+  @include transform-style(scale(0));
+  @include border-radius(100%);
+}
+
+@keyframes ripple {
+  0% {
+    @include transform-style(scale(0));
+  }
+  20% {
+    @include transform-style(scale(1));
+  }
+  100% {
+    opacity: 0;
+    @include transform-style(scale(1.2));
+  }
+}
+
+button.enable_ripple_dropdown:not(:active):after {
+  @include animation(ripple 1s ease-out);
+}
+
+button.enable_ripple_dropdown:after {
+  visibility: hidden;
+}
+
+button.enable_ripple_dropdown:focus:after {
+  visibility: visible;
+}
+
+.rippleEffectDropdown {
+  display: inline-block;
+  height: 10px;
+  width: $common-dimension; 
+  background: rgba(136, 133, 133, 0.2);
+  @include position_top_right_bottom_left(relative, 0, 0, 0, 0);
+  @include animation(rippleCircle 0.5s ease-out);
+  @include transform-style(scale(0));
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sass Stepper</title>
+    <link rel="stylesheet" href="stepper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="outer_container">
+    <div>A contrived example using a transition between steps</div>
+    <div class="container">
+        
+        <div class="header_nav" id="select_campaign">
+            <span class="active">1</span>    
+            <span class="active_text">Select campaign settings</span>
+        </div>
+        <span class="hr"><hr></span>
+        <div class="header_nav" id="create_ad_group">
+            <span>2</span>    
+            <span>Create an ad group</span>
+        </div>
+        <span class="hr"><hr></span>
+        <div class="header_nav" id="create_ad">
+            <span>3</span>
+            <span>Create an ad</span>
+        </div>
+        <div class="select_campaign_test" id="select_campaign_test">
+            Select campaign settings. Campaign settings can include your budget, network, bidding options and adjustments, location targeting, campaign end date, and other settings that affect an entire.
+        </div>
+        <div id="hidden_item" class="hidden_item">
+            <a href="../Ruby%20examples/stepper.html">Click here </a> to reset the example.
+        </div>
+        <div class="button_group">
+            <button type="button" name="back_btn" id="back_btn" disabled="disabled" onclick="moveBack();" class="enable_ripple"> BACK </button>
+            <button type="button" name="back_next" id="back_next" onclick="changeContent(this);" class="enable_ripple"> NEXT </button>
+        </div>
+    </div>
+</div>
+<!--  -->
+    <div class="outer_container" id="dropdown_conatiner" onclick="remove_list();">
+
+        <div class="never_dropdown_container" onclick="openNeverDropdown(this);" id="1">
+            <span id="text_nvr" class="text_nvr_dropdown">Never</span>
+            <span id="" class="fa fa-caret-down enable_ripple_dropdown"></span>
+            <div class="underline_hr" id="underline_hr"></div>
+        </div>
+        <div class="disabled_dropdown_container" id="2" onclick="openNeverDropdown(this);">
+            <span class="text_nvr_dropdown">Disabled</span>
+            <span class="fa fa-caret-down"></span>
+            <div class="underline_hr"></div>
+        </div>
+        <div class="never_dropdown_container custom_width_dropdown" id="3" onclick="openNeverDropdown(this);">
+            <span class="text_nvr_dropdown">Custom Width</span>
+            <span class="fa fa-caret-down enable_ripple_dropdown"></span>
+            <div class="underline_hr"></div>
+        </div>
+        <div class="never_dropdown_container" onclick="openNeverDropdown(this);" id="4">
+            <span class="text_nvr_dropdown">Auto Width</span>
+            <span id="" class="fa fa-caret-down enable_ripple_dropdown"></span>
+            <div class="underline_hr"></div>
+        </div>
+        <div class="dropdown_menu" id="dropdown_menu">
+            <button class="ripple_dropdown_list">Never</button>
+            <button class="ripple_dropdown_list" type="button">Every Night</button>
+            <button class="ripple_dropdown_list" type="button">Weeknights</button>
+            <button class="ripple_dropdown_list" type="button">Weekends</button>
+            <button class="ripple_dropdown_list" type="button">Weekly</button>
+        </div>
+    </div>
+<script src="stepper.js"></script>
+</body>
+</html>

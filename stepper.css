@@ -1,0 +1,233 @@
+.position_relative, .ripple, .rippleEffectDropdown, .outer_container .never_dropdown_container.custom_width_dropdown, .container hr:first-child, .dropdown_menu, .hidden_item, .ripple_dropdown_list, .dropdownListRippleEffect, button.enable_ripple {
+  position: relative; }
+
+.margin_auto, .common_width_margin, .outer_container .never_dropdown_container, .outer_container .disabled_dropdown_container {
+  margin: auto; }
+
+.common_width_margin, .outer_container .never_dropdown_container, .outer_container .disabled_dropdown_container {
+  width: 27%; }
+
+.button_group button:nth-child(2) {
+  height: 32px; }
+  .button_group button:nth-child(2):active {
+    box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.2);
+    transform: "translateZ(4px)"; }
+.button_group button:nth-child(1) {
+  height: 32px; }
+
+@keyframes ripple {
+  to {
+    opacity: 0.2;
+    transform: scale(2.5); } }
+.ripple {
+  animation: ripple 0.4s linear;
+  padding: 9px 0 0 0;
+  display: block;
+  transform: scale(0);
+  background: rgba(255, 255, 255, 0.9); }
+
+@keyframes rippleCircle {
+  to {
+    opacity: 0.6;
+    -webkit-border-radius: 50%;
+    -moz--border-radius: 50%;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transform: scale(2.5); } }
+.enable_ripple_dropdown {
+  float: right;
+  transition: all 0.5s ease-out;
+  width: 10%;
+  height: 15px; }
+
+.rippleEffectDropdown {
+  animation: rippleCircle 0.5s ease-out;
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  background: rgba(136, 133, 133, 0.2);
+  transform: scale(0); }
+
+body {
+  padding: 0;
+  font: 100% Roboto, sans-serif;
+  margin: 0 0 0 0; }
+
+.outer_container {
+  box-sizing: border-box;
+  margin: 50px auto 50px auto;
+  height: 300px;
+  -webkit-box-shadow: 0 0 1.5px 1.5px #E7E7E7;
+  -moz-box-shadow: 0 0 1.5px 1.5px #E7E7E7;
+  box-shadow: 0 0 1.5px 1.5px #E7E7E7;
+  width: 949px; }
+  .outer_container:first-child {
+    padding: 20px 4px 0 16px; }
+  .outer_container .select_campaign_test {
+    line-height: 24px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.87);
+    width: 96%;
+    padding: 20px 0 20px 16px; }
+  .outer_container .text_nvr_dropdown {
+    width: 70%;
+    display: inline-block; }
+  .outer_container:nth-child(2) {
+    height: 250px; }
+    .outer_container:nth-child(2) div:not(:nth-child(2)) {
+      cursor: pointer; }
+  .outer_container .fa.fa-caret-down {
+    float: right;
+    text-align: right;
+    color: #E0E0E0; }
+  .outer_container .never_dropdown_container {
+    padding: 20px 0 3px 0;
+    border-bottom: 1px solid #E0E0E0; }
+  .outer_container .disabled_dropdown_container {
+    cursor: not-allowed;
+    padding: 25px 0 3px 0;
+    border-bottom: 2px dotted #E0E0E0; }
+    .outer_container .disabled_dropdown_container .text_nvr_dropdown {
+      color: #E0E0E0; }
+  .outer_container .never_dropdown_container.custom_width_dropdown {
+    right: 34px;
+    width: 20%; }
+
+.header_nav {
+  font-size: 14px;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.87); }
+  .header_nav span:first-of-type {
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    height: 20px;
+    background: #9e9e9e;
+    display: inline-block;
+    width: 20px;
+    -webkit-border-radius: 999px;
+    -moz--border-radius: 999px;
+    border-radius: 999px; }
+  .header_nav span:nth-child(2) {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.26); }
+  .header_nav span:last-child.active_text {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 500; }
+  .header_nav:first-child .active {
+    background: #00bcd4; }
+  .header_nav:nth-child(1) {
+    padding: 19px 5px 20px 16px; }
+  .header_nav:nth-child(3) {
+    padding: 0 5px 0 5px; }
+  .header_nav:nth-child(5) {
+    padding: 0 0 0 7px; }
+
+.container {
+  max-width: 700px;
+  margin: 20px auto 0 auto; }
+  .container hr:first-child {
+    border-bottom: none;
+    border-color: #bdbdbd;
+    top: 3px;
+    right: initial;
+    bottom: initial;
+    left: initial;
+    display: inline-block;
+    width: 13.2%; }
+  .container div:nth-child(2) {
+    padding: 0 0 0 5px; }
+
+.dropdown_menu {
+  z-index: 1000;
+  border: 1px solid #E0E0E0;
+  top: initial;
+  right: initial;
+  bottom: 36px;
+  left: 336px;
+  height: 0;
+  overflow: hidden;
+  background: white;
+  width: 128px;
+  -webkit-box-shadow: 0 0 1px 0 #E0E0E0;
+  -moz-box-shadow: 0 0 1px 0 #E0E0E0;
+  box-shadow: 0 0 1px 0 #E0E0E0;
+  display: none; }
+  .dropdown_menu button {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+    height: 32px;
+    background: transparent;
+    width: 100%;
+    padding: 8.5px 0 5.5px 0; }
+    .dropdown_menu button:first-child {
+      color: #FF4091;
+      margin: 15px 0 0 0; }
+    .dropdown_menu button:hover {
+      background: #f1eeee; }
+
+.hidden_item {
+  top: 22px;
+  right: initial;
+  bottom: initial;
+  left: 18px;
+  display: none; }
+  .hidden_item a {
+    color: #ff4691;
+    text-decoration: none; }
+
+.ripple_dropdown_list {
+  overflow: hidden;
+  transition: all 0.5s; }
+
+.dropdownListRippleEffect {
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: initial;
+  animation: rippleDropdown 0.6s linear;
+  transition: all 1s;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10 0 0 0;
+  transform: scale(0); }
+
+@keyframes rippleDropdown {
+  to {
+    opacity: 0;
+    transform: scale(2.5); } }
+.button_group {
+  padding: 12px 0 20px 16px; }
+
+button.enable_ripple {
+  border: none;
+  outline: none;
+  font: 100% Roboto, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  transition: all 0.5s;
+  margin: 3px 0 0 0;
+  padding: 10px 0 10px 0;
+  -webkit-border-radius: 2px;
+  -moz--border-radius: 2px;
+  border-radius: 2px;
+  width: 12.8%;
+  height: 36px; }
+  button.enable_ripple:hover {
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0.1s; }
+  button.enable_ripple:nth-child(1) {
+    color: #b2b2b2;
+    background: transparent;
+    margin: 0 12px 0 0; }
+    button.enable_ripple:nth-child(1):hover:not(:disabled) {
+      background: rgba(153, 153, 153, 0.2); }
+  button.enable_ripple:nth-child(2) {
+    color: white;
+    background: #00BCD4; }
+    button.enable_ripple:nth-child(2):hover {
+      background: #66D7E5; }
+
+/*# sourceMappingURL=stepper.css.map */
